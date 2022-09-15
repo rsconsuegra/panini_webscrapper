@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "panini-webscrapper"
+version = "0.0.1"
+description = "A webscrapper to get (all, hopefully) products in Panini Mx Store"
+authors = ["Randy Consuegra <rsconsuegra95@gmail.com>"]
+license = "Apache License 2.0"
+readme = "README.md"
+packages = [{include = "panini_webscrapper"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.4.4"
+requests = "^2.28.1"
+beautifulsoup4 = "^4.11.1"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
