@@ -1,11 +1,11 @@
-# Scrapy settings for panini_webscrapper project
-#
-# For simplicity, this file contains only settings considered important or
-# commonly used. You can find more settings consulting the documentation:
-#
-#     https://docs.scrapy.org/en/latest/topics/settings.html
-#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+""" Scrapy settings for panini_webscrapper project
+
+ For simplicity, this file contains only settings considered important or
+ commonly used. You can find more settings consulting the documentation:
+
+     https://docs.scrapy.org/en/latest/topics/settings.html
+     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+     https://docs.scrapy.org/en/latest/topics/spider-middleware.html"""
 
 BOT_NAME = "panini_webscrapper"
 
@@ -80,7 +80,8 @@ ITEM_PIPELINES = {
 # AUTOTHROTTLE_DEBUG = False
 
 # Enable and configure HTTP caching (disabled by default)
-# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+# See
+# https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 # HTTPCACHE_ENABLED = True
 # HTTPCACHE_EXPIRATION_SECS = 0
 # HTTPCACHE_DIR = 'httpcache'

@@ -1,14 +1,32 @@
+"""Scraper to panini store products"""
+from typing import Iterator, Type
+
 import scrapy
 from panini_webscrapper.items import StoreItem
 
+response_type = Type[scrapy.http.response.html.HtmlResponse]
 
-class ExampleSpider(scrapy.Spider):
+
+class PaniniSpider(scrapy.Spider):  # pylint: disable=too-few-public-methods
+    """Webscraper of Panini Store"""
+
     name = "panini"
     allowed_domains = ["tiendapanini.com.mx"]
     start_urls = ["https://tiendapanini.com.mx/coleccionables/item-3?"]
     page = 1
 
-    def parse(self, response):
+    def parse(self, response: response_type) -> Iterator[StoreItem]:
+        """
+        Get items from Panini mx Store pages, iterating over all availables
+
+        Parameters
+        ----------
+        response : request containing page information
+        Yields
+        ------
+        StoreItem
+            A product from the store
+        """
         next_page = '//*[@class="action  next"]/@href'
         products = response.xpath(
             '//*[contains(@href, "https")][@class="product-item-link"]'
